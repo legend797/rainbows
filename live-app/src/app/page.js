@@ -1,7 +1,16 @@
+'use client'
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
 import Home from "./home/page";
 
 
+
 export default function Main() {
+
+  useEffect(() => {
+    AOS.init();
+  }, []);
   return (
     <main>
       <Home />
