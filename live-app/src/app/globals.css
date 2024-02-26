@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.max-container{
+  max-width: 1500px;
+  
+}
+
+.home-hero {
+  background-image: url("./assets/banner.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.video-bg {
+  background-image: url("./assets/photo10.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
