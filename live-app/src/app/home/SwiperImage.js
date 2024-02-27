@@ -33,7 +33,7 @@ const SwiperImage = () => {
       
     }}
     modules={[Autoplay]}
-   className='max-w-[700px] max-h-[427px]  rounded-2xl'
+   className='max-w-[142px] max-h-[107px]  rounded-sm'
     >
       <SwiperSlide ><Image src={p1} className='w-full h-full' /></SwiperSlide>
       <SwiperSlide ><Image src={p2} className='w-full h-full' /></SwiperSlide>

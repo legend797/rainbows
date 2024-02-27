@@ -3,17 +3,23 @@ import localFont from "next/font/local";
 
 import Image from "next/image";
 
-import banner from "../assets/banner.png";
+import banner from "../assets/Group.svg";
 import logo from "../assets/Logo1.png";
 import logoMobile from "../assets/logo-mobile.png";
 import pre1 from "../assets/live-preview1.png";
 import pre2 from "../assets/live-preview2.png";
+import C1 from "../assets/1.jpg";
+import C2 from "../assets/2.jpg";
+import C3 from "../assets/3.jpg";
+import C4 from "../assets/4.jpg";
+import C5 from "../assets/5.png";
 
 import imageTablet from "../assets/image-tablet.png";
 import imageMobile from "../assets/image-mobile.png";
 
 import TicketForm from "./TicketForm";
 import ImageCard from "./ImageCard";
+import Collab from "../components/Collab";
 
 import VideoCard from "../components/VideoCard";
 import SwiperImage from "./SwiperImage";
@@ -36,7 +42,7 @@ const Home = () => {
         <div className="max-md:w-[271px] text-center mx-auto">
           <p
             style={myFont.style}
-            className="mb-8 text-[#FF8C8C] md:text-4xl max-md:text-[24px] max-md:w-[271px] text-center"
+            className=" mb-8  md:text-4xl text-[#3A0072] max-md:text-[24px] max-md:w-[271px] text-center stroke"
           >
             “မကြော်ကောက်စတမ်း အခြော်ကောက် အစွမ်း”
           </p>
@@ -58,7 +64,8 @@ const Home = () => {
           <Image src={imageTablet} />
         </div>
         <div className="max-md:mb-[50px] sm:hidden flex justify-center">
-          <Image src={imageMobile} />
+          {/* <Image src={imageMobile} /> */}
+          <SwiperImage />
         </div>
 
         <p
@@ -123,22 +130,28 @@ const Home = () => {
         </div>
 
         {/* Watch Live Section */}
-        <div className="max-container mx-auto">
-          <div className="flex w-full md:h-[384px] max-md:h-[300px]  md:justify-between max-md:justify-center  md:items-center md:mb-[100px] max-md:mb-[20px]">
-            <div data-aos="fade-up" className="w-[30%] max-md:hidden">
+        <div className="max-container mx-auto h-auto">
+          <div className="flex w-full md:h-auto max-md:h-auto  md:justify-between max-md:justify-center  md:items-center md:mb-[100px] max-md:mb-[20px]">
+            <div data-aos="zoom-in-right" className="w-[24%] max-md:hidden">
               <Image src={pre1} />
             </div>
 
             <div
               data-aos="fade-up"
-              className="md:w-1/3 max-md:w-full  flex flex-col justify-center items-center"
+              className="md:w-[50%] max-md:w-full h-auto flex flex-col justify-center items-center"
             >
-              <div className="cursor-pointer hover:bg-gray-300  md:mb-[100px] max-md:mb-[50px] md:w-[236px] md:h-[62px] max-md:w-[170px] max-md:h-[44px] bg-white flex justify-center items-center gap-2">
-                <div className="w-[12px] h-[12px] rounded-md bg-black"></div>
-                <p className="text-[#16002B] text-[17px] font-[700] ">
-                  Watch Live
-                </p>
-              </div>
+              {/* <div className="cursor-pointer hover:bg-gray-300  md:mb-[100px] max-md:mb-[50px] md:w-[236px] md:h-[62px] max-md:w-[170px] max-md:h-[44px] bg-white flex justify-center items-center gap-2"></div> */}
+                {/* <div className="w-[12px] h-[12px] rounded-md bg-black"></div> */}
+                <div className="mb-[50px] text-center">
+                
+                <p className="text-white text-[13px] w-[850px] h-[152px]">သက်တံများ ရဲ့ ပွဲအကြောင်းလေး ကိုစိတ်ဝင်စားတဲ့ ချစ်ရသော ပြည်သူများကို အကြောင်းအရာလေးတွေမျှဝေပေးချင်ပါတယ်။ 
+ပါဝင်သော ပွဲအစီအစဉ်များ-
+ 🌈 ရသစုံ အနုပညာ ဖျော်ဖြေမှု ( တော်လှန်LGBTIQ+ ရဲဘော်များရဲ့ အကအလှများ ၊ စတိတ်ရှိုးအစီအစဉ်များ ၊ CDM များရဲ့ တန်ဖိုးထားဖန်တီးထားတဲ့ Eco printing fashion show၊ ပြည်သူချစ်အနုပညာရှင်များရဲ့ ဖျော်ဖြေတင်ဆက်မှုများ ၊ တေ-ာ်လှန်ရေးထဲမှ ပေါက်ဖွားလာတဲ့ သမိုင်းဝင် ပြဇာတ်များ နှင့် အခြားအခြားသော အနုပညာ တင်ဆက်မှာများ ) ပါဝင်ပါတယ်။
+🌈 ၄င်း တင်ဆက်မှုများကို March လ ၂ ရက်နေ့မှာ အွန်လိုင်းက ဝယ်ယူထားတဲ့ လက်မှတ်များဖြင့် နိုင်ငံအနှံ့တွင် တချိန်တည်းမှာ website မှတဆင့် ဝင်ရောက်ကြည့်ရှုနိုင်မှာဖြစ်ပါတယ် ။
+🌈 လက်မှတ်ဝယ်ယူခြင်းဖြင့် ဓမ္မဘက်တော်သား ပြည်သူတွေက ခဏတာ အပန်းဖြေရင်း အွန်လိုင်းကနေ တင်ဆက်မှုတွေကို အိုးမကွာအိမ်မကွာ ကြည့်ရှု အားပေးရမယ် ။ ထိုလက်မှတ်ရောင်းအားများမှ ငွေကြေးတွေဟာလဲ ပြည်သူ့အင်အားအဖြစ် အမှန်တကယ်လိုအပ်နေသော စစ်ရေ-ာင်မိဘပြည်သူတွေနဲ့ သူရဲကောင်းတွေဆီ တိုက်ရိုက်စီးဆင်းမှာဖြစ်ပါတယ် ။
+</p>
+                </div>
+              
               <div className="flex gap-[35px] max-md:text-[12px]">
                 <div
                   style={Font2.style}
@@ -156,10 +169,19 @@ const Home = () => {
               </div>
             </div>
 
-            <div data-aos="fade-up" className="w-[30%] max-md:hidden">
+            <div data-aos="zoom-in-left" className="w-[24%] max-md:hidden">
               <Image src={pre2} />
             </div>
           </div>
+        </div>
+
+        {/* Collabator */}
+        <div className="flex justify-center gap-12">
+          <Collab src={C1} />
+          <Collab src={C2} />
+          <Collab src={C3} />
+          <Collab src={C4} />
+          <Collab src={C5} />
         </div>
 
         {/* Video Header */}
