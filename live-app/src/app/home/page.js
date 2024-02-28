@@ -49,7 +49,7 @@ const Home = () => {
           </p>
 
           {/* Ticket Code Field */}
-          <div data-aos="zoom-in" className="z-10 max-md:mb-[50px] md:mb-[100px]">
+          <div  className="z-10 max-md:mb-[50px] md:mb-[100px]">
             <TicketForm />
           </div>
 
