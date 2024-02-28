@@ -1,6 +1,7 @@
 "use client"
 import React from 'react';
-import { Image } from '@chakra-ui/react';
+import Image from "next/image";
+// import { Image } from '@chakra-ui/react';
 
 
 const Collab = ({src}) => {
