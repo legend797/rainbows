@@ -3,16 +3,19 @@ import localFont from "next/font/local";
 
 import Image from "next/image";
 
-import banner from "../assets/Group.svg";
-import logo from "../assets/Logo1.png";
-import logoMobile from "../assets/logo-mobile.png";
+import banner from "../assets/Slogan.svg";
+import logo from "../assets/Logo.svg";
+
 import pre1 from "../assets/live-preview1.png";
 import pre2 from "../assets/live-preview2.png";
-import C1 from "../assets/1.jpg";
-import C2 from "../assets/2.jpg";
-import C3 from "../assets/3.jpg";
-import C4 from "../assets/4.jpg";
-import C5 from "../assets/5.png";
+import C1 from '../assets/C1.png';
+import C2 from '../assets/C2.png';
+import C3 from '../assets/C3.png';
+import C4 from '../assets/C4.png';
+import C5 from '../assets/C5.png';
+import C6 from '../assets/C6.png';
+import C7 from '../assets/C7.jpg';
+import C8 from '../assets/C8.png';
 
 import imageTablet from "../assets/image-tablet.png";
 import imageMobile from "../assets/image-mobile.png";
@@ -29,51 +32,55 @@ const Font2 = localFont({ src: "../fonts/MMTaunggyi.ttf" });
 
 const Home = () => {
   return (
-    <main className="bg-[#16002b]  mx-auto h-auto">
-      <div className="  max-container mx-auto h-auto flex flex-col items-center">
-        <div className="w-full lg:h-[200px] max-lg:h-[120px]  max-sm:h-[50px]">
-          <Image src={banner} className="w-full" />
+    <main className="bg-[#d0c8e3]  mx-auto h-auto">
+      <div className="  max-container mx-auto h-auto ">
+        <div className="w-full h-full">
+          <Image src={banner} className="w-full h-full" />
         </div>
-        <div className="flex justify-center">
+        <div className=" flex flex-col items-center justify-center">
           <Image src={logo} className="md:hidden w-[97px]" />
-          <Image src={logo} className="max-md:hidden w-[194px] h-auto" />
+          <Image src={logo} className="absolute top-[100px] max-md:hidden w-[268px] h-auto" />
+          <p className="absolute top-[450px]  text-center text-white md:text-[20px] max-md:text-[10px]">
+            ဖျော်ဖြေမည့်နေ့ : 2 /3 /2024
+          </p>
+
+          {/* Ticket Code Field */}
+          <div data-aos="zoom-in" className="absolute top-[510px] max-md:mb-[50px] md:mb-[100px]">
+            <TicketForm />
+          </div>
         </div>
 
-        <div className="max-md:w-[271px] text-center mx-auto">
+        {/* <div className="max-md:w-[271px] text-center mx-auto">
           <p
             style={myFont.style}
             className=" mb-8  md:text-4xl text-[#3A0072] max-md:text-[24px] max-md:w-[271px] text-center stroke"
           >
             “မကြော်ကောက်စတမ်း အခြော်ကောက် အစွမ်း”
           </p>
-        </div>
+        </div> */}
 
-        <p className="mb-5 text-center text-white md:text-[20px] max-md:text-[10px]">
-          ဖျော်ဖြေမည့်နေ့ : 2 /3 /2024
-        </p>
-
-        {/* Ticket Code Field */}
-        <div data-aos="zoom-in" className="max-md:mb-[50px] md:mb-[100px]">
-          <TicketForm />
-        </div>
         {/* Image Card */}
-        <div data-aos="fade-up" className="mb-[150px]  mx-auto max-lg:hidden">
-          <ImageCard />
+        <div className="hidden">
+          <div
+            data-aos="fade-up"
+            className=" mb-[150px]  mx-auto max-lg:hidden"
+          >
+            <ImageCard />
+          </div>
+          <div className="md:mb-[50px] max-sm:hidden lg:hidden flex justify-center">
+            <Image src={imageTablet} />
+          </div>
+          <div className="max-md:mb-[50px] sm:hidden flex justify-center">
+            {/* <Image src={imageMobile} /> */}
+            <SwiperImage />
+          </div>
         </div>
-        <div className="md:mb-[50px] max-sm:hidden lg:hidden flex justify-center">
-          <Image src={imageTablet} />
-        </div>
-        <div className="max-md:mb-[50px] sm:hidden flex justify-center">
-          {/* <Image src={imageMobile} /> */}
-          <SwiperImage />
-        </div>
-
-        <p
+        {/* <p
           style={myFont.style}
-          className="mb-8 text-[#FF8C8C] lg:text-4xl sm:text-[24px] max-sm:text-[16px] text-center"
+          className="stroke1 mb-8 text-[#FF8C8C] lg:text-[48px] sm:text-[24px] max-sm:text-[16px] text-center"
         >
           “မကြော်ကောက်စတမ်း အခြော်ကောက် အစွမ်း”
-        </p>
+        </p> */}
 
         {/* Event Date and Time */}
         {/* <div className='w-[409px]'>
@@ -130,7 +137,7 @@ const Home = () => {
         </div>
 
         {/* Watch Live Section */}
-        <div className="max-container mx-auto h-auto">
+        <div className="max-container mx-auto h-auto mt-[80px]">
           <div className="flex w-full md:h-auto max-md:h-auto  md:justify-between max-md:justify-center  md:items-center md:mb-[100px] max-md:mb-[20px]">
             <div data-aos="zoom-in-right" className="w-[24%] max-md:hidden">
               <Image src={pre1} />
@@ -141,27 +148,39 @@ const Home = () => {
               className="md:w-[50%] max-md:w-full h-auto flex flex-col justify-center items-center"
             >
               {/* <div className="cursor-pointer hover:bg-gray-300  md:mb-[100px] max-md:mb-[50px] md:w-[236px] md:h-[62px] max-md:w-[170px] max-md:h-[44px] bg-white flex justify-center items-center gap-2"></div> */}
-                {/* <div className="w-[12px] h-[12px] rounded-md bg-black"></div> */}
-                <div className="mb-[50px] text-center">
-                
-                <p className="text-white text-[13px] w-[850px] h-[152px]">သက်တံများ ရဲ့ ပွဲအကြောင်းလေး ကိုစိတ်ဝင်စားတဲ့ ချစ်ရသော ပြည်သူများကို အကြောင်းအရာလေးတွေမျှဝေပေးချင်ပါတယ်။ 
-ပါဝင်သော ပွဲအစီအစဉ်များ-
- 🌈 ရသစုံ အနုပညာ ဖျော်ဖြေမှု ( တော်လှန်LGBTIQ+ ရဲဘော်များရဲ့ အကအလှများ ၊ စတိတ်ရှိုးအစီအစဉ်များ ၊ CDM များရဲ့ တန်ဖိုးထားဖန်တီးထားတဲ့ Eco printing fashion show၊ ပြည်သူချစ်အနုပညာရှင်များရဲ့ ဖျော်ဖြေတင်ဆက်မှုများ ၊ တေ-ာ်လှန်ရေးထဲမှ ပေါက်ဖွားလာတဲ့ သမိုင်းဝင် ပြဇာတ်များ နှင့် အခြားအခြားသော အနုပညာ တင်ဆက်မှာများ ) ပါဝင်ပါတယ်။
-🌈 ၄င်း တင်ဆက်မှုများကို March လ ၂ ရက်နေ့မှာ အွန်လိုင်းက ဝယ်ယူထားတဲ့ လက်မှတ်များဖြင့် နိုင်ငံအနှံ့တွင် တချိန်တည်းမှာ website မှတဆင့် ဝင်ရောက်ကြည့်ရှုနိုင်မှာဖြစ်ပါတယ် ။
-🌈 လက်မှတ်ဝယ်ယူခြင်းဖြင့် ဓမ္မဘက်တော်သား ပြည်သူတွေက ခဏတာ အပန်းဖြေရင်း အွန်လိုင်းကနေ တင်ဆက်မှုတွေကို အိုးမကွာအိမ်မကွာ ကြည့်ရှု အားပေးရမယ် ။ ထိုလက်မှတ်ရောင်းအားများမှ ငွေကြေးတွေဟာလဲ ပြည်သူ့အင်အားအဖြစ် အမှန်တကယ်လိုအပ်နေသော စစ်ရေ-ာင်မိဘပြည်သူတွေနဲ့ သူရဲကောင်းတွေဆီ တိုက်ရိုက်စီးဆင်းမှာဖြစ်ပါတယ် ။
-</p>
-                </div>
-              
+              {/* <div className="w-[12px] h-[12px] rounded-md bg-black"></div> */}
+              <div className="mb-[50px] text-center ">
+                <p className="text-[#3A0072] text-[13px] w-[850px] h-[152px]">
+                  သက်တံများ ရဲ့ ပွဲအကြောင်းလေး ကိုစိတ်ဝင်စားတဲ့ ချစ်ရသော
+                  ပြည်သူများကို အကြောင်းအရာလေးတွေမျှဝေပေးချင်ပါတယ်။ ပါဝင်သော
+                  ပွဲအစီအစဉ်များ- 🌈 ရသစုံ အနုပညာ ဖျော်ဖြေမှု ( တော်လှန်LGBTIQ+
+                  ရဲဘော်များရဲ့ အကအလှများ ၊ စတိတ်ရှိုးအစီအစဉ်များ ၊ CDM များရဲ့
+                  တန်ဖိုးထားဖန်တီးထားတဲ့ Eco printing fashion show၊
+                  ပြည်သူချစ်အနုပညာရှင်များရဲ့ ဖျော်ဖြေတင်ဆက်မှုများ ၊
+                  တေ-ာ်လှန်ရေးထဲမှ ပေါက်ဖွားလာတဲ့ သမိုင်းဝင် ပြဇာတ်များ နှင့်
+                  အခြားအခြားသော အနုပညာ တင်ဆက်မှာများ ) ပါဝင်ပါတယ်။ 🌈 ၄င်း
+                  တင်ဆက်မှုများကို March လ ၂ ရက်နေ့မှာ အွန်လိုင်းက ဝယ်ယူထားတဲ့
+                  လက်မှတ်များဖြင့် နိုင်ငံအနှံ့တွင် တချိန်တည်းမှာ website
+                  မှတဆင့် ဝင်ရောက်ကြည့်ရှုနိုင်မှာဖြစ်ပါတယ် ။ 🌈
+                  လက်မှတ်ဝယ်ယူခြင်းဖြင့် ဓမ္မဘက်တော်သား ပြည်သူတွေက ခဏတာ
+                  အပန်းဖြေရင်း အွန်လိုင်းကနေ တင်ဆက်မှုတွေကို အိုးမကွာအိမ်မကွာ
+                  ကြည့်ရှု အားပေးရမယ် ။ ထိုလက်မှတ်ရောင်းအားများမှ ငွေကြေးတွေဟာလဲ
+                  ပြည်သူ့အင်အားအဖြစ် အမှန်တကယ်လိုအပ်နေသော
+                  စစ်ရေ-ာင်မိဘပြည်သူတွေနဲ့ သူရဲကောင်းတွေဆီ
+                  တိုက်ရိုက်စီးဆင်းမှာဖြစ်ပါတယ် ။
+                </p>
+              </div>
+
               <div className="flex gap-[35px] max-md:text-[12px]">
                 <div
                   style={Font2.style}
-                  className="text-white flex flex-col gap-y-3"
+                  className="text-[#3A0072] flex flex-col gap-y-3"
                 >
                   <p>ကမ်ပိန်းကာလ</p>
                   <p>ဖျော်ဖြေမည့်နေ့</p>
                   <p>ဖျော်ဖြေမည့်သူများ</p>
                 </div>
-                <div className="text-white flex flex-col gap-y-3">
+                <div className="text-[#3A0072] flex flex-col gap-y-3">
                   <p>12 /2 /2024 မှ 29 /2 /2024</p>
                   <p>2 /3 /2024</p>
                   <p>တော်လှန်LGBTများ အနုပညာရှင်များ</p>
@@ -176,28 +195,36 @@ const Home = () => {
         </div>
 
         {/* Collabator */}
-        <div className="flex justify-center gap-12">
-          <Collab src={C1} />
+        <div data-aos="zoom-in" className="flex justify-center gap-12 mb-[80px]">
+          <Collab  src={C1} />
           <Collab src={C2} />
           <Collab src={C3} />
           <Collab src={C4} />
           <Collab src={C5} />
+          <Collab src={C6} />
+          <Collab src={C7} />
+          <Collab src={C8} />
         </div>
-
+        <div className="w-full h-[70px] bg-[#FF3837] flex justify-center items-center">
+          <p style={myFont.style} className="text-white font-[400]">powered by quokka studio</p>
+        </div>
+        
         {/* Video Header */}
-        <p className="mt-[150px] mb-[30px] lg:text-[36px] md:text-[30px] sm:text-[24px] max-sm:text-[20px] text-[#FF8C8C] font-[400] text-center">
-          SHORT VIDEO ON FACEBOOK
-        </p>
-        <div
-          data-aos="fade-up"
-          className="flex justify-center max-sm:w-[316px] max-sm:mx-auto"
-        >
-          <div className=" grid lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-x-5 gap-y-8 ">
-            <VideoCard title={"စစ်ရှောင်ရန်ပုံငွေပွဲ"} />
-            <VideoCard title={`“အော်ကားလုံးပဲ မော်ကင်ဂလာပါရှင့်”`} />
-            <VideoCard title={"“မုန်တိုင်းကြားက သက်တံများ” ဆိုတာ ဘာလဲ??.."} />
-            <VideoCard title={"“မုန်တိုင်းကြားက သက်တံများ” ဆိုတာ ဘာလဲ??.."} />
-            <VideoCard title={"“မုန်တိုင်းကြားက သက်တံများ” ဆိုတာ ဘာလဲ??.."} />
+        <div className="hidden">
+          <p className="mt-[150px] mb-[30px] lg:text-[36px] md:text-[30px] sm:text-[24px] max-sm:text-[20px] text-[#FF8C8C] font-[400] text-center">
+            SHORT VIDEO ON FACEBOOK
+          </p>
+          <div
+            data-aos="fade-up"
+            className="flex justify-center max-sm:w-[316px] max-sm:mx-auto"
+          >
+            <div className=" grid lg:grid-cols-3 max-lg:grid-cols-2 max-md:grid-cols-1 gap-x-5 gap-y-8 ">
+              <VideoCard title={"စစ်ရှောင်ရန်ပုံငွေပွဲ"} />
+              <VideoCard title={`“အော်ကားလုံးပဲ မော်ကင်ဂလာပါရှင့်”`} />
+              <VideoCard title={"“မုန်တိုင်းကြားက သက်တံများ” ဆိုတာ ဘာလဲ??.."} />
+              <VideoCard title={"“မုန်တိုင်းကြားက သက်တံများ” ဆိုတာ ဘာလဲ??.."} />
+              <VideoCard title={"“မုန်တိုင်းကြားက သက်တံများ” ဆိုတာ ဘာလဲ??.."} />
+            </div>
           </div>
         </div>
       </div>
