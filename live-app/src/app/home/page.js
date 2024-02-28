@@ -3,7 +3,8 @@ import localFont from "next/font/local";
 
 import Image from "next/image";
 
-import banner from "../assets/Slogan1.svg";
+import banner from "../assets/Group.svg";
+import banner2 from '../assets/Slogan1.svg';
 import logo from "../assets/Logo.svg";
 import logo2 from '../assets/logo2.svg';
 
@@ -35,15 +36,17 @@ const Home = () => {
   return (
     <main className="bg-[#d0c8e3]  mx-auto h-auto">
       <div className="  max-container mx-auto h-auto ">
-        <div className="w-full h-full ">
-      <Image src={banner} className="w-full h-full " />
-      </div>
-        <div className=" w-full flex flex-col items-center justify-center ">
-          
-          <Image src={logo} className="md:hidden w-[97px] absolute max-sm:top-[10px]" />
-          <Image src={logo} className="absolute lg:top-[100px] md:top-[0px] max-md:hidden w-[268px] h-auto " />
+        <div className="w-full h-[0px]">
+       <Image src={banner} className="w-full h-auto"/>
+       </div>
+        <div className=" w-full h-auto flex flex-col items-center justify-center ">
+          <div>
+          {/* <Image src={logo} className="md:hidden max-sm:w-[200px] sm:w-[300px] md:w-[400px] absolute max-sm:top-0" />
+          <Image src={logo} className="absolute lg:top-[100px] md:top-[0px] max-md:hidden w-[600px] h-auto " /> */}
+          <Image src={logo} className=" lg:w-[600px]  max-sm:w-[250px] sm:w-[300px] md:w-[400px]" />
+          </div>
 
-          <div className="absolute lg:top-[500px] md:top-[300px] max-sm:top-[150px]">
+          <div className=" md:top-[450px] max-sm:top-[350px]">
           <p className=" md:mb-[30px] max-sm:mb-[10px] max-sm:mt-[5px] text-center text-white md:text-[20px] max-md:text-[10px]">
             ဖျော်ဖြေမည့်နေ့ : 2 /3 /2024
           </p>
@@ -55,6 +58,26 @@ const Home = () => {
 
           </div>
         </div>
+
+        
+
+        <div className="flex justify-center items-center  mb-[50px]">
+        <div data-aos="fade-up" className="flex gap-[35px] max-md:text-[12px]">
+                <div
+                  style={Font2.style}
+                  className="text-[#3A0072] flex flex-col gap-y-3"
+                >
+                  <p>ကမ်ပိန်းကာလ</p>
+                  <p>ဖျော်ဖြေမည့်နေ့</p>
+                  <p>ဖျော်ဖြေမည့်သူများ</p>
+                </div>
+                <div className="text-[#3A0072] flex flex-col gap-y-3">
+                  <p>12 /2 /2024 မှ 29 /2 /2024</p>
+                  <p>2 /3 /2024</p>
+                  <p>တော်လှန်LGBTများ အနုပညာရှင်များ</p>
+                </div>
+              </div>
+              </div>
 
         {/* <div className="max-md:w-[271px] text-center mx-auto">
           <p
@@ -143,7 +166,7 @@ const Home = () => {
         </div>
 
         {/* Watch Live Section */}
-        <div className="max-container mx-auto h-auto mt-[80px]">
+        <div className="hidden max-container mx-auto h-auto mt-[80px]">
           <div className="flex w-full md:h-auto max-md:h-auto  md:justify-between max-md:justify-center  md:items-center md:mb-[100px] max-md:mb-[20px]">
             <div data-aos="zoom-in-right" className="w-[24%] max-lg:hidden">
               <Image src={pre1} />
@@ -177,27 +200,19 @@ const Home = () => {
                 </p>
               </div>
 
-              <div className="flex gap-[35px] max-md:text-[12px]">
-                <div
-                  style={Font2.style}
-                  className="text-[#3A0072] flex flex-col gap-y-3"
-                >
-                  <p>ကမ်ပိန်းကာလ</p>
-                  <p>ဖျော်ဖြေမည့်နေ့</p>
-                  <p>ဖျော်ဖြေမည့်သူများ</p>
-                </div>
-                <div className="text-[#3A0072] flex flex-col gap-y-3">
-                  <p>12 /2 /2024 မှ 29 /2 /2024</p>
-                  <p>2 /3 /2024</p>
-                  <p>တော်လှန်LGBTများ အနုပညာရှင်များ</p>
-                </div>
-              </div>
+              
             </div>
 
             <div data-aos="zoom-in-left" className="w-[24%] max-lg:hidden">
               <Image src={pre2} />
             </div>
           </div>
+        </div>
+
+{/* Banner2 */}
+        <div className="flex flex-col justify-center items-center mb-[50px]">
+          <div ><Image src={banner2} className="w-full h-auto" /></div>
+        
         </div>
 
         {/* Collabator */}
@@ -214,7 +229,7 @@ const Home = () => {
         </div>
         </div>
         <div className="w-full h-[70px] bg-[#FF3837] flex justify-center items-center">
-          <p style={myFont.style} className="text-white font-[400]">Powered by <div className="inline-block"><Image src={logo2} className="w-full h-[17px]" /></div> </p>
+          <p style={myFont.style} className="text-white font-[400]">Powered by <span className="inline-block"><Image src={logo2} className="w-auto h-[17px]" /></span> </p>
           
         </div>
         
