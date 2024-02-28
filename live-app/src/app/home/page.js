@@ -74,7 +74,7 @@ const Home = () => {
                 <div className="text-[#3A0072] font-[600] flex flex-col gap-y-3">
                   <p>12 /2 /2024 မှ 29 /2 /2024</p>
                   <p>2 /3 /2024</p>
-                  <p>တော်လှန် LGBTQ+ များ အနုပညာရှင်များ</p>
+                  <p>တော်လှန် LGBTIQ+ များ အနုပညာရှင်များ</p>
                 </div>
               </div>
               </div>
