@@ -1,26 +1,30 @@
 'use client'
 import React, { useState } from 'react';
+import { useRouter } from 'next/navigation'
 
 const TicketForm = ({ onSubmit }) => {
+const router = useRouter();
+
   const [ticketCode, setTicketCode] = useState('');
 
   const handleChange = (e) => {
     const { value } = e.target;
     // Allow only numbers in the input field
-    const onlyNumbers = value.replace(/[^0-9]/g, '');
-    setTicketCode(onlyNumbers);
     
+    setTicketCode(value);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onSubmit(ticketCode);
-    
-   
-    
+    // Logic to handle form submission
+    // Redirect to another page
+    router.push('/live');
   };
+    
+  
 
   return (
+  
     <form onSubmit={handleSubmit} className=" flex justify-center items-center ">
         <div className='bg-[#321f45] px-3 py-2 rounded-[33px] max-md:w-[300px] max-md:h-[40px] max-md:py-1 '>
       <input
