@@ -3,8 +3,9 @@ import localFont from "next/font/local";
 
 import Image from "next/image";
 
-import banner from "../assets/Slogan.svg";
+import banner from "../assets/Slogan1.svg";
 import logo from "../assets/Logo.svg";
+import logo2 from '../assets/logo2.svg';
 
 import pre1 from "../assets/live-preview1.png";
 import pre2 from "../assets/live-preview2.png";
@@ -34,19 +35,24 @@ const Home = () => {
   return (
     <main className="bg-[#d0c8e3]  mx-auto h-auto">
       <div className="  max-container mx-auto h-auto ">
-        <div className="w-full h-full">
-          <Image src={banner} className="w-full h-full" />
-        </div>
-        <div className=" flex flex-col items-center justify-center">
-          <Image src={logo} className="md:hidden w-[97px]" />
-          <Image src={logo} className="absolute top-[100px] max-md:hidden w-[268px] h-auto" />
-          <p className="absolute top-[450px]  text-center text-white md:text-[20px] max-md:text-[10px]">
+        <div className="w-full h-full ">
+      <Image src={banner} className="w-full h-full " />
+      </div>
+        <div className=" w-full flex flex-col items-center justify-center ">
+          
+          <Image src={logo} className="md:hidden w-[97px] absolute max-sm:top-[10px]" />
+          <Image src={logo} className="absolute lg:top-[100px] md:top-[0px] max-md:hidden w-[268px] h-auto " />
+
+          <div className="absolute lg:top-[500px] md:top-[300px] max-sm:top-[150px]">
+          <p className=" md:mb-[30px] max-sm:mb-[10px] max-sm:mt-[5px] text-center text-white md:text-[20px] max-md:text-[10px]">
             ဖျော်ဖြေမည့်နေ့ : 2 /3 /2024
           </p>
 
           {/* Ticket Code Field */}
-          <div data-aos="zoom-in" className="absolute top-[510px] max-md:mb-[50px] md:mb-[100px]">
+          <div data-aos="zoom-in" className="z-10 max-md:mb-[50px] md:mb-[100px]">
             <TicketForm />
+          </div>
+
           </div>
         </div>
 
@@ -139,18 +145,18 @@ const Home = () => {
         {/* Watch Live Section */}
         <div className="max-container mx-auto h-auto mt-[80px]">
           <div className="flex w-full md:h-auto max-md:h-auto  md:justify-between max-md:justify-center  md:items-center md:mb-[100px] max-md:mb-[20px]">
-            <div data-aos="zoom-in-right" className="w-[24%] max-md:hidden">
+            <div data-aos="zoom-in-right" className="w-[24%] max-lg:hidden">
               <Image src={pre1} />
             </div>
 
             <div
               data-aos="fade-up"
-              className="md:w-[50%] max-md:w-full h-auto flex flex-col justify-center items-center"
+              className="lg:w-[50%] max-lg:w-full max-sm:px-2 sm:px-[20px]  h-auto flex flex-col justify-center items-center"
             >
               {/* <div className="cursor-pointer hover:bg-gray-300  md:mb-[100px] max-md:mb-[50px] md:w-[236px] md:h-[62px] max-md:w-[170px] max-md:h-[44px] bg-white flex justify-center items-center gap-2"></div> */}
               {/* <div className="w-[12px] h-[12px] rounded-md bg-black"></div> */}
-              <div className="mb-[50px] text-center ">
-                <p className="text-[#3A0072] text-[13px] w-[850px] h-[152px]">
+              <div className="mb-[50px] text-center   ">
+                <p className="text-[#3A0072] text-[13px] max-lg:w-full  max-lg:h-auto lg:w-[850px] lg:h-[152px] ">
                   သက်တံများ ရဲ့ ပွဲအကြောင်းလေး ကိုစိတ်ဝင်စားတဲ့ ချစ်ရသော
                   ပြည်သူများကို အကြောင်းအရာလေးတွေမျှဝေပေးချင်ပါတယ်။ ပါဝင်သော
                   ပွဲအစီအစဉ်များ- 🌈 ရသစုံ အနုပညာ ဖျော်ဖြေမှု ( တော်လှန်LGBTIQ+
@@ -188,14 +194,15 @@ const Home = () => {
               </div>
             </div>
 
-            <div data-aos="zoom-in-left" className="w-[24%] max-md:hidden">
+            <div data-aos="zoom-in-left" className="w-[24%] max-lg:hidden">
               <Image src={pre2} />
             </div>
           </div>
         </div>
 
         {/* Collabator */}
-        <div data-aos="zoom-in" className="flex justify-center gap-12 mb-[80px]">
+        <div className="flex justify-center ">
+        <div data-aos="zoom-in" className="grid max-sm:gap-5 sm:gap-10 justify-center max-sm:grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 max-sm:mt-4 mb-[80px]">
           <Collab  src={C1} />
           <Collab src={C2} />
           <Collab src={C3} />
@@ -205,8 +212,10 @@ const Home = () => {
           <Collab src={C7} />
           <Collab src={C8} />
         </div>
+        </div>
         <div className="w-full h-[70px] bg-[#FF3837] flex justify-center items-center">
-          <p style={myFont.style} className="text-white font-[400]">powered by quokka studio</p>
+          <p style={myFont.style} className="text-white font-[400]">Powered by <div className="inline-block"><Image src={logo2} className="w-full h-[17px]" /></div> </p>
+          
         </div>
         
         {/* Video Header */}
