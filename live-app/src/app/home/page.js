@@ -5,7 +5,7 @@ import Image from "next/image";
 
 import banner from "../assets/Group.svg";
 import banner2 from '../assets/Slogan1.svg';
-import logo from "../assets/Logo.svg";
+import logo from "../assets/Rectangle.svg";
 import logo2 from '../assets/logo2.svg';
 
 import pre1 from "../assets/live-preview1.png";
@@ -40,13 +40,13 @@ const Home = () => {
        <Image src={banner} className="w-full h-auto"/>
        </div>
         <div className=" w-full h-auto flex flex-col items-center justify-center ">
-          <div>
+          <div className="">
           {/* <Image src={logo} className="md:hidden max-sm:w-[200px] sm:w-[300px] md:w-[400px] absolute max-sm:top-0" />
           <Image src={logo} className="absolute lg:top-[100px] md:top-[0px] max-md:hidden w-[600px] h-auto " /> */}
-          <Image src={logo} className=" lg:w-[600px]  max-sm:w-[250px] sm:w-[300px] md:w-[400px]" />
+          <Image src={logo} className="lg:mt-[150px] md:mt-[100px] sm:mt-[80px] max-sm:mt-[30px] lg:w-[500px]  max-sm:w-[150px] sm:w-[250px] md:w-[400px] mb-[50px]" />
           </div>
 
-          <div className=" md:top-[450px] max-sm:top-[350px]">
+          <div className="">
           <p className=" md:mb-[30px] max-sm:mb-[10px] max-sm:mt-[5px] text-center text-white md:text-[20px] max-md:text-[10px]">
             ဖျော်ဖြေမည့်နေ့ : 2 /3 /2024
           </p>
@@ -65,16 +65,16 @@ const Home = () => {
         <div data-aos="fade-up" className="flex gap-[35px] max-md:text-[12px]">
                 <div
                   style={Font2.style}
-                  className="text-[#3A0072] flex flex-col gap-y-3"
+                  className="text-[#3A0072] font-[700] flex flex-col gap-y-3"
                 >
                   <p>ကမ်ပိန်းကာလ</p>
                   <p>ဖျော်ဖြေမည့်နေ့</p>
                   <p>ဖျော်ဖြေမည့်သူများ</p>
                 </div>
-                <div className="text-[#3A0072] flex flex-col gap-y-3">
+                <div className="text-[#3A0072] font-[600] flex flex-col gap-y-3">
                   <p>12 /2 /2024 မှ 29 /2 /2024</p>
                   <p>2 /3 /2024</p>
-                  <p>တော်လှန်LGBTများ အနုပညာရှင်များ</p>
+                  <p>တော်လှန် LGBTQ+ များ အနုပညာရှင်များ</p>
                 </div>
               </div>
               </div>
