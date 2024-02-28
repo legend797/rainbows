@@ -1,6 +1,9 @@
 import { Inter } from "next/font/google";
 import "./globals.css";
-
+import { Providers } from "./providers";
+import theme from "./theme";
+import { ColorModeScript } from "@chakra-ui/react";
+import { ChakraProvider } from '@chakra-ui/react'
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata = {
@@ -11,7 +14,21 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <ColorModeScript initialColorMode={theme.config.initialColorMode} />
+        <Providers>
+        <main style={{ minHeight: '100vh' }}>
+            {children}
+          </main> 
+
+        </Providers>
+        {/* <ChakraProvider>
+          <main style={{ minHeight: '100vh'}}>
+            {children}
+          </main>
+        </ChakraProvider> */}
+
+      </body>
     </html>
   );
 }

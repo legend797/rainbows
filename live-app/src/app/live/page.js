@@ -1,9 +1,14 @@
+'use server';
 import React from 'react'
+import Live from './Live'
+const LivePage = async () => {
 
-const Live = () => {
-  return (
-    <div>This is Live Page</div>
-  )
-}
+	// console.log(lives)
 
-export default Live
+	return (
+    <Live />
+  );
+};
+
+export default LivePage;
+
