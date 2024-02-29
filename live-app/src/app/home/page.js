@@ -37,7 +37,7 @@ const Home = () => {
   return (
     <main className="bg-[#d0c8e3]  mx-auto h-auto">
       <div className="  max-container mx-auto h-auto ">
-        <div className="w-full h-[0px]">
+        <div className="max-container h-[0px]">
        <Image src={banner} className="w-full h-auto"/>
        </div>
         <div className=" w-full h-auto flex flex-col items-center justify-center ">
@@ -62,18 +62,18 @@ const Home = () => {
 
         
 
-        <div className="flex justify-center items-center  mb-[50px]">
-        <div data-aos="fade-up" className="flex gap-[35px] max-md:text-[12px]">
+        <div className="">
+        <div data-aos="fade-up" className="mb-[50px] flex justify-center items-center max-md:text-[12px] gap-[35px]">
                 <div
                   style={Font2.style}
-                  className="text-[#3A0072] font-[700] flex flex-col gap-y-3"
+                  className="text-[#3A0072] text-justify font-[700] flex flex-col gap-y-[18px]"
                 >
                   <p>ကမ်ပိန်းကာလ</p>
-                  <p>ဖျော်ဖြေမည့်နေ့</p>
+                  <p>ဖျော်ဖြေမည့်အချိန်</p>
                   <p>ဖျော်ဖြေမည့်သူများ</p>
                 </div>
-                <div className="text-[#3A0072] font-[600] flex flex-col gap-y-3">
-                  <p>12 /2 /2024 မှ 29 /2 /2024</p>
+                <div className="text-[#3A0072] text-justify font-[600] flex flex-col gap-y-3">
+                  <p>12 /2 /2024 မှ 1 /3 /2024</p>
                   <p>2 /3 /2024  (၅း၃၀ မြန်မာစံတော်ချိန်)</p>
                   <p>တော်လှန် LGBTIQ+ များ အနုပညာရှင်များ</p>
                 </div>
