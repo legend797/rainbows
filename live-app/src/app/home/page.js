@@ -66,7 +66,7 @@ const Home = () => {
         <div data-aos="fade-up" className="mb-[50px] flex justify-center items-center max-md:text-[12px] gap-[35px]">
                 <div
                   style={Font2.style}
-                  className="text-[#3A0072] text-justify font-[700] flex flex-col gap-y-[18px]"
+                  className="text-[#3A0072] text-justify font-[700] flex flex-col max-sm:gap-y-[20px] sm:gap-y-[18px]"
                 >
                   <p>ကမ်ပိန်းကာလ</p>
                   <p>ဖျော်ဖြေမည့်အချိန်</p>
