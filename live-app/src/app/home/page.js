@@ -72,7 +72,7 @@ const Home = () => {
                   <p>ဖျော်ဖြေမည့်အချိန်</p>
                   <p>ဖျော်ဖြေမည့်သူများ</p>
                 </div>
-                <div className="text-[#3A0072] text-justify font-[600] flex flex-col gap-y-3">
+                <div className="text-[#3A0072] text-justify font-[700] flex flex-col gap-y-3">
                   <p>12 /2 /2024 မှ 1 /3 /2024</p>
                   <p>2 /3 /2024  (၅း၃၀ မြန်မာစံတော်ချိန်)</p>
                   <p>တော်လှန် LGBTIQ+ များ အနုပညာရှင်များ</p>
