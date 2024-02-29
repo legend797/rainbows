@@ -22,6 +22,7 @@ import {
 	IconVolume,
 	IconVolumeOff
 } from "@tabler/icons-react";
+import { Fascinate } from "next/font/google";
 import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
@@ -58,7 +59,7 @@ const LiveVideoPlayer = (props) => {
 	const intervalRef = useRef(null);
 	const videoRef = useRef();
 	const playerRef = useRef();
-	const { authToken, poster, liveuuid, setIsLiveEnded, setIsLivePlayed,  setIsError, refreshingToken, isError} = props;
+	// const { setIsLiveEnded, setIsLivePlayed} = props;
 	const [playerReady, setPlayerReady] = useState(false);
 	const [isMuted, setIsMuted] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -169,7 +170,7 @@ const LiveVideoPlayer = (props) => {
 		player.on("dispose", () => {
 			videojs.log("player will dispose");
 		});
-		player.on("ended", () => { setIsPlaying(false), setIsLiveEnded(true) });
+		// player.on("ended", () => { setIsPlaying(false), setIsLiveEnded(true) });
 	}, []); // Add necessary dependencies in the array
 
 	const options = useMemo(() => ({
@@ -180,7 +181,6 @@ const LiveVideoPlayer = (props) => {
 		responsive: true,
 		fluid: true,
 		liveTracker: true,
-		poster: "https://e1.pxfuel.com/desktop-wallpaper/522/335/desktop-wallpaper-gay-pride-backgrounds-facebook-covers-%E2%80%A2-iphones-gay-flag.jpg",
 		sources: [
 			{
 				src: `https://video.risrainbow.com/04e6bfac-6169-4fd4-b348-86f6d59a1c6d/playlist.m3u8`,
@@ -295,7 +295,7 @@ const LiveVideoPlayer = (props) => {
 			if (player.paused()) {
 				player.play();
 				setIsPlaying(true);
-				setIsLivePlayed(true);
+				// setIsLivePlayed(true);
 
 				// If the video is played, clear the existing timeout
 				if (timeoutId) {
@@ -418,7 +418,7 @@ const LiveVideoPlayer = (props) => {
 							p={1}
 							borderRadius={5}
 						>
-							<Text fontSize={14}>
+							<Text  fontSize={14}>
 								{formatTime(currentTime)}
 							</Text>
 						</Box>
