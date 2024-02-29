@@ -56,17 +56,19 @@ export default function Live({ data, verifyTicket, endStream, refreshingToken })
 
 
     return isClient &&(
+        <>
         <Container
             // backgroundColor= {"#d0c8e3"}
             maxW="100%"
-            px={{ base: 0, md: "auto" }}
+            px={{ base: "5px", md: "auto" }}
             pt={10}
+            height={"calc(100vh - 132px)"}
         >
             <VStack w={"100%"} h={{ base: "auto", md: "auto" }} color={"#fff"} gap={5}>
                 <HStack justifyContent={"space-between"} width={"100%"} maxW={"1200px"}>
                     {/* <IconButton icon={<IconArrowLeft />} color={"tomato"} rounded={20} background={"#fff"} /> */}
-                    <Button background={"#fff"} color={"#000"} onClick={() => {router.push('/')}} leftIcon={<IconArrowLeft />}>Back</Button>
-                    <Image src="/Rectangle.svg" w={{ base: "150px", md: "200px" }} />
+                    <Button size={{base:"sm", md:"lg"}} background={"#fff"} color={"#000"} onClick={() => {router.push('/')}} leftIcon={<IconArrowLeft />}>Back</Button>
+                    <Image src="/Rectangle.svg" w={{ base: "130px", md: "200px" }} />
                 </HStack>
 
 
@@ -79,20 +81,20 @@ export default function Live({ data, verifyTicket, endStream, refreshingToken })
                 }}>
                     <LiveVideoPlayer setIsLivePlayed={setIsLivePlayed} isLiveEnded={isLiveEnded} />
                 </VStack>
-                <Box position={"absolute"} bottom={0} background={"white"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>
-                    <Box my={4} maxWidth={"1200px"} className="grid max-sm:gap-5 sm:gap-10 justify-center max-sm:grid-cols-3 sm:grid-cols-4 lg:grid-cols-8 max-sm:mt-4">
-                        <Image className='w-[100px] h-[100px]' src={'/col/C1.png'} />
-                        <Image className='w-[100px] h-[100px]' src={'/col/C2.png'} />
-                        <Image className='w-[100px] h-[100px]' src={'/col/C3.png'} />
-                        <Image className='w-[100px] h-[100px]' src={'/col/C4.png'} />
-                        <Image  className='w-[100px] h-[100px]' src={'/col/C5.png'} />
-                        <Image  className='w-[100px] h-[100px]' src={'/col/C6.png'} />
-                        <Image className='w-[100px] h-[100px]' src={'/col/C7.jpg'} />
-                        <Image className='w-[100px] h-[100px]' src={'/col/C8.png'} />
-                    </Box>
-                </Box>
             </VStack>
-
         </Container>
+         <Box  bottom={0} background={"white"} minHeight={"132px"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>
+         <Box my={4} maxWidth={"1200px"} className="grid max-sm:gap-5 sm:gap-10 justify-center max-sm:grid-cols-6 sm:grid-cols-6 lg:grid-cols-8 max-sm:mt-4">
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/col/C1.png'} />
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}}src={'/col/C2.png'} />
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/col/C3.png'} />
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/col/C4.png'} />
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/col/C5.png'} />
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/col/C6.png'} />
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/col/C7.jpg'} />
+             <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/col/C8.png'} />
+         </Box>
+     </Box>
+     </>
     );
 }
