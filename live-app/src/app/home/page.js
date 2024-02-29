@@ -2,6 +2,7 @@ import React from "react";
 import localFont from "next/font/local";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import banner from "../assets/Group.svg";
 import banner2 from '../assets/Slogan1.svg';
@@ -73,7 +74,7 @@ const Home = () => {
                 </div>
                 <div className="text-[#3A0072] font-[600] flex flex-col gap-y-3">
                   <p>12 /2 /2024 မှ 29 /2 /2024</p>
-                  <p>2 /3 /2024</p>
+                  <p>2 /3 /2024  (၅း၃၀ မြန်မာစံတော်ချိန်)</p>
                   <p>တော်လှန် LGBTIQ+ များ အနုပညာရှင်များ</p>
                 </div>
               </div>
@@ -229,7 +230,8 @@ const Home = () => {
         </div>
         </div>
         <div className="w-full h-[70px] bg-[#FF3837] flex justify-center items-center">
-          <p style={myFont.style} className="text-white font-[400]">Powered by <span className="inline-block"><Image src={logo2} className="w-auto h-[17px]" /></span> </p>
+          <p style={myFont.style} className="text-white font-[400]">Powered by <Link target="_blank" href='https://www.facebook.com/profile.php?id=61556230526611&mibextid=ZbWKwL
+'><Image src={logo2} className="w-auto h-[20px] inline-block " /></Link></p>
           
         </div>
         
