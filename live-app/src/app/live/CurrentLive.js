@@ -1,7 +1,8 @@
 'use client'
 // import VideoPlayer from "@/app/components/videoPlayer/VideoPlayer";
-import LiveVideoPlayer from "@/app/components/liveVideoPlayer/LiveVideoPlayer";
+import LiveVideoPlayer from "../components/liveVideoPlayer/LiveVideoPlayer";
 // import StreamVideoPlayer from "@/app/components/streamVideoPlayer/StreamVideoPlayer";
+import VideoPlayer from "../components/muxPlayer/VideoPlayer";
 import {
 	Box,
 	Button,
@@ -36,6 +37,7 @@ const CurrentLive = ({ }) => {
 					height: "100%",
 				}}>
 					<LiveVideoPlayer />
+					{/* <VideoPlayer /> */}
 				</VStack>
 			</VStack>
 			{/* <ShareModal isOpen={isShareModalOpen} onClose={onShareModalClose} title={data.name} /> */}
