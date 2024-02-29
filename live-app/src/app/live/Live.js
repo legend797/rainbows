@@ -1,4 +1,4 @@
-"use client";
+'use client';
 import {
     Box,
     Container,
@@ -15,7 +15,7 @@ import {
 // import { useRouter } from "next/navigation";
 import { useEffect, useState, useRef } from "react";
 import { useRouter } from "next/navigation";
-import LiveVideoPlayer from "./LiveVideoPlayer";
+import LiveVideoPlayer from "../components/LiveVideoPlayer/LiveVideoPlayer";
 
 import { IconArrowLeft } from "@tabler/icons-react";
 // import Comments from "./Comments";
@@ -47,7 +47,7 @@ export default function Live({ data, verifyTicket, endStream, refreshingToken })
     useEffect(() => {
     	// onOpen()
     	setIsClient(true)
-    }, [router])
+    }, [])
     // useEffect(() => {
     // 	if (!isOpen && isClient) {
     // 		router.back()
@@ -55,7 +55,7 @@ export default function Live({ data, verifyTicket, endStream, refreshingToken })
     // }, [isOpen])
 
 
-    return isClient &&(
+    return isClient && (
         <>
         <Container
             // backgroundColor= {"#d0c8e3"}
@@ -79,7 +79,7 @@ export default function Live({ data, verifyTicket, endStream, refreshingToken })
                     width: "100%",
                     height: "100%",
                 }}>
-                    <LiveVideoPlayer setIsLivePlayed={setIsLivePlayed} isLiveEnded={isLiveEnded} />
+                    <LiveVideoPlayer setIsLivePlayed={setIsLivePlayed} setIsLiveEnded={setIsLiveEnded} />
                 </VStack>
             </VStack>
         </Container>

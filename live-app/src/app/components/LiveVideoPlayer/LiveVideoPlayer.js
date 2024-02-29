@@ -26,7 +26,6 @@ import { useEffect, useRef, useState, useMemo, useCallback } from "react";
 import videojs from "video.js";
 import "video.js/dist/video-js.css";
 import "./videojs.style.css";
-import 'videojs-youtube';
 
 const PlayerButton = ({ children, ...props }) => {
 	return (
@@ -59,7 +58,7 @@ const LiveVideoPlayer = (props) => {
 	const intervalRef = useRef(null);
 	const videoRef = useRef();
 	const playerRef = useRef();
-	const { authToken, liveuuid, setIsLiveEnded, setIsLivePlayed,  setIsError, refreshingToken, isError} = props;
+	const { authToken, poster, liveuuid, setIsLiveEnded, setIsLivePlayed,  setIsError, refreshingToken, isError} = props;
 	const [playerReady, setPlayerReady] = useState(false);
 	const [isMuted, setIsMuted] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(false);
@@ -181,13 +180,12 @@ const LiveVideoPlayer = (props) => {
 		responsive: true,
 		fluid: true,
 		liveTracker: true,
+		poster: "https://e1.pxfuel.com/desktop-wallpaper/522/335/desktop-wallpaper-gay-pride-backgrounds-facebook-covers-%E2%80%A2-iphones-gay-flag.jpg",
 		sources: [
 			{
-				// src: `https://api.24framesmozart.com/source/live/index.m3u8/${liveuuid}?auth_token=${authToken}`,
-				// src: 'https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8',
-				// type: 'application/x-mpegURL',
-				type: 'video/youtube',
-				src: 'https://www.youtube.com/watch?v=pwNYoMaiM5g',
+				src: `https://video.risrainbow.com/04e6bfac-6169-4fd4-b348-86f6d59a1c6d/playlist.m3u8`,
+				// src: 'https://devstreaming-cdn.apple.com/videos/streaming/examples/img_bipbop_adv_example_fmp4/master.m3u8',
+				type: 'application/x-mpegURL',
 			},
 		],
 	}), []);
@@ -217,8 +215,7 @@ const LiveVideoPlayer = (props) => {
 		// 	return options;
 		// };
 		// videojs.Vhs.xhr.onRequest(globalXhrRequestHook);
-		// if (!playerRef.current && authToken) {
-			if (!playerRef.current) {
+		if (!playerRef.current) {
 			// The Video.js player needs to be _inside_ the component el for React 18 Strict Mode.
 			const videoElement = document.createElement("video-js");
 
