@@ -114,7 +114,7 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                         {
                             !isLiveStarted && (
                                 <VStack w={"100%"} mb={4}>
-                                    <Text color={"purple"} fontSize={{ base: "16px", md: "22px" }}> Live Start In</Text>
+                                    <Text color={"purple"} fontSize={{ base: "16px", md: "22px" }}> Live Starts In</Text>
                                     <Text color={"purple"} fontSize={{ base: "18px", md: "24px" }}> {timeRemaining.days} Day : {timeRemaining.hours} Hr : {timeRemaining.minutes} Min : {timeRemaining.seconds} Sec  </Text>
                                 </VStack>
                             )
