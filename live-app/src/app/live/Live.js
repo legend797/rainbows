@@ -19,7 +19,7 @@ import CurrentLive from "./CurrentLive";
 
 
 
-export default function Live({ data, verifyTicket, endStream, refreshingToken }) {
+export default function Live({token, id}) {
 	const [isMobile] = useMediaQuery("(max-width: 480px)");
 	const [isTablet] = useMediaQuery("(max-width: 48em)");
 	const [initPlayer, setInitPlayer] = useState(false);
@@ -62,7 +62,7 @@ export default function Live({ data, verifyTicket, endStream, refreshingToken })
                     <Button size={{base:"sm", md:"lg"}} background={"#fff"} color={"#000"} onClick={() => {router.push('/')}} leftIcon={<IconArrowLeft />}>Back</Button>
                     <Image src="/assets/Rectangle.svg" w={{ base: "130px", md: "200px" }} />
                 </HStack>
-				<CurrentLive />
+				<CurrentLive token={token} id={id}/>
 			</VStack>
 		</Container>
 		<Box  bottom={0} background={"white"} minHeight={"132px"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>

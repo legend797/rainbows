@@ -18,10 +18,7 @@ import {
 
 import { useRef, useState, useEffect, useTransition, useMemo } from "react";
 
-const CurrentLive = ({ }) => {
-
-
-
+const CurrentLive = ({token, id }) => {
 	const [isClient, setIsClient] = useState(false);
 	useEffect(() => {
 		setIsClient(true)
@@ -36,8 +33,9 @@ const CurrentLive = ({ }) => {
 					width: "100%",
 					height: "100%",
 				}}>
+					
 					{/* <LiveVideoPlayer /> */}
-					<VideoPlayer />
+					<VideoPlayer token={token} id={id} />
 				</VStack>
 			</VStack>
 			{/* <ShareModal isOpen={isShareModalOpen} onClose={onShareModalClose} title={data.name} /> */}

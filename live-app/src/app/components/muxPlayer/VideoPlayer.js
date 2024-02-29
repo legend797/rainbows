@@ -1,14 +1,19 @@
 import MuxPlayer from '@mux/mux-player-react';
 
-export default function VideoPlayer() {
-  return (
+export default function VideoPlayer({token, id}) {
+  return (token && id) && (
     <MuxPlayer
     streamType="live"
-    playbackId="00VIjpBVPmHr6Rk1oH4oaZDQHQ9dvLM00XPf7I01od2HD"
+    playbackId= {id}
     metadataVideoTitle="Placeholder (optional)"
     metadataViewerUserId="Placeholder (optional)"
     primaryColor="#FFFFFF"
     secondaryColor="#000000"
+    tokens={{
+        playback: token,
+        thumbnail: token,
+        storyboard: token
+    }}
   />
   );
 }
