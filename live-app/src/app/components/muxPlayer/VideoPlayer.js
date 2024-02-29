@@ -5,8 +5,8 @@ export default function VideoPlayer({token, id}) {
     <MuxPlayer
     streamType="live"
     playbackId= {id}
-    metadataVideoTitle="Placeholder (optional)"
-    metadataViewerUserId="Placeholder (optional)"
+    metadataVideoTitle="RIS RAINBOW"
+    metadataViewerUserId=""
     primaryColor="#FFFFFF"
     secondaryColor="#000000"
     tokens={{

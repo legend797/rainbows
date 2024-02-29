@@ -33,16 +33,49 @@ import Collab from "../components/Collab";
 
 import VideoCard from "../components/VideoCard";
 import SwiperImage from "./SwiperImage";
-import { Button , Text, Box, VStack} from "@chakra-ui/react";
+import { Button, Text, Box, VStack, HStack } from "@chakra-ui/react";
 const myFont = localFont({ src: "../fonts/Khyay-Regular.ttf" });
 const Font2 = localFont({ src: "../fonts/MMTaunggyi.ttf" });
 
 const Home = ({ verifyTicket, isTicketVerified }) => {
 
     const router = useRouter();
-
+    const TicketAcceptTime = new Date('2024-03-02' + 'T' + '17:30' + '+07:00');
+    const liveStartTime = new Date('2024-03-02' + 'T' + '17:30' + '+06:30');
+    const currentTime = new Date();
+    const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
+    const [isTicketAccept, setIsTicketAccept] = useState(currentTime >= TicketAcceptTime)
+    const [isVerified, setIsVerified] = useState(isTicketVerified);
     const [ticketCode, setTicketCode] = useState("");
     const [ticketRes, setTicketRes] = useState(true)
+    const [timeRemaining, setTimeRemaining] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            const startDate = liveStartTime // Convert provided date and time to GMT
+            const currentTime = new Date();
+            const timeDiff = startDate - currentTime;
+
+            if (timeDiff <= 0) {
+                // If start time has passed, close the modal or do any other desired action
+                // setIsLiveStarted(true)
+                clearInterval(interval);
+            } else {
+                // Calculate remaining time
+                const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                let minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+                let seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+                seconds = seconds < 10 ? '0' + seconds : seconds;
+                minutes = minutes < 10 ? '0' + minutes : minutes;
+                setTimeRemaining({ days, hours, minutes, seconds });
+            }
+        }, 1000);
+
+        return () => clearInterval(interval); // Clean up interval on unmount or when modal is closed
+    }, []);
+
 
     const handleChange = (e) => {
         setTicketCode(e.target.value);
@@ -53,7 +86,7 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
         const res = await verifyTicket(ticketCode)
         setTicketRes(res);
         if (res) {
-            router.push('/live')
+            setIsVerified(true)
         }
     };
 
@@ -75,46 +108,65 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                     </div>
 
                     <div className="">
-                        <p className=" md:mb-[30px] max-sm:mb-[10px] max-sm:mt-[5px] text-center text-white md:text-[20px] max-md:text-[10px]">
+                        <p className=" md:mb-[15px] max-sm:mb-[10px] max-sm:mt-[5px] text-center text-white md:text-[20px] max-md:text-[10px]">
                             ဖျော်ဖြေမည့်နေ့ : 2 /3 /2024
                         </p>
+                        {
+                            !isLiveStarted && (
+                                <VStack w={"100%"} mb={4}>
+                                    <Text color={"purple"} fontSize={{ base: "16px", md: "22px" }}> Live Start In</Text>
+                                    <Text color={"purple"} fontSize={{ base: "18px", md: "24px" }}> {timeRemaining.days} Day : {timeRemaining.hours} Hr : {timeRemaining.minutes} Min : {timeRemaining.seconds} Sec  </Text>
+                                </VStack>
+                            )
+                        }
 
                         {/* Ticket Code Field */}
-                        <div className="z-10 max-md:mb-[50px] md:mb-[100px]">
-                            {isTicketVerified ? (
-                                <Button sx={{background: "linear-gradient(to right,#E70000, #FF8C00,#FFEF00, #00811F, #0044FF, #760089)"}} _hover={{transform:"scale(1.1)"}} onClick={() => router.push('/live')}>
-                                   <Text fontWeight={800}> Go to Live Streaming</Text>
-                                   
-                                    </Button>
-                            ) : (
-                                <VStack gap={3} minH={"100px"}>
-                                <form action={() => handleSubmitTicket()} className=" flex justify-center items-center ">
-                                    <Box background = {"linear-gradient(to right,#E70000, #FF8C00,#FFEF00, #00811F, #0044FF, #760089)"} className=' px-3 py-2 rounded-[33px] max-md:w-[300px] max-md:h-[40px] max-md:py-1 '>
-                                        <input
-                                            type="text"
-                                            value={ticketCode}
-                                            onChange={handleChange}
-                                            style={{textAlign:"center"}}
-                                            placeholder="########"
-                                            className="max-md:w-[199px] max-md:h-[30px]  text-black bg-[white] px-9 border border-gray-500 rounded-[33px] py-2 mr-2 focus:border-white focus:outline-none "
-                                        />
-                                        {/* <Button background={"none"} type="submit" className="max-md:w-[68px] max-md:h-[30px] max-md:px-[5px] max-md:py-[4px] max-md:text-[8px] max-md:rounded-2xl  hover:bg-[#16002b] hover:text-white text-gray-300 font-semibold py-2 px-4 rounded-[33px]">
+                        <VStack className="z-10 max-md:mb-[50px] md:mb-[100px]">
+                            {isVerified ? isLiveStarted ? (
+                                <Button sx={{ background: "linear-gradient(to right,#E70000, #FF8C00,#FFEF00, #00811F, #0044FF, #760089)" }} _hover={{ transform: "scale(1.1)" }} onClick={() => router.push('/live')}>
+                                    <Text fontWeight={800}> Go to Live Streaming</Text>
+                                </Button>) : (
+                                    <>
+                                <Text textColor={"#000"}>
+                                    လက်မှတ်အတည် ပြုပြီးပါပြီ။
+                                </Text>
+                                <Text textColor={"#000"}>
+                                    LIVE စတင်ရန် စောင့်ဆိုင်းပါ။
+                                </Text>
+                                </>
+                            )
+                                : (
+                                    <VStack gap={3} minH={"100px"}>
+                                        <form action={() => handleSubmitTicket()}>
+                                            <Box rounded={20} px={3} py={1} background={"linear-gradient(to right,#E70000, #FF8C00,#FFEF00, #00811F, #0044FF, #760089)"}
+                                                display={"flex"} opacity={isTicketAccept ? 1 : 0.5} flexDirection={"row"} justifyContent={"center"} alignItems={"center"}>
+                                                <input
+                                                    disabled={!isTicketAccept}
+                                                    type="text"
+                                                    value={ticketCode}
+                                                    onChange={handleChange}
+                                                    style={{ textAlign: "center" }}
+                                                    placeholder="########"
+                                                    className="max-md:w-[199px] max-md:h-[30px]  text-black bg-[white] px-9 border border-gray-500 rounded-[33px] py-2 mr-2 focus:border-white focus:outline-none "
+                                                />
+                                                {/* <Button background={"none"} type="submit" className="max-md:w-[68px] max-md:h-[30px] max-md:px-[5px] max-md:py-[4px] max-md:text-[8px] max-md:rounded-2xl  hover:bg-[#16002b] hover:text-white text-gray-300 font-semibold py-2 px-4 rounded-[33px]">
                                          Submit Code
                                      </Button> */}
-                                        <SubmitBtn />
-                                    </Box>
-                                </form>
-                                {
-                                    !ticketRes && (
-                                        <Text fontSize={14} color={"tomato"}>
-                                        လက်မှတ်မှားယွင်းနေပါသည်
-                                    </Text>
-                                    )
-                                }
-                              
-                                </VStack>
-                            )}
-                        </div>
+                                                <SubmitBtn />
+                                            </Box>
+                                        </form>
+                                        {
+                                            !ticketRes && (
+                                                <Text fontSize={14} color={"tomato"}>
+                                                    လက်မှတ်မှားယွင်းနေပါသည်။
+                                                </Text>
+                                                
+                                            )
+                                        }
+
+                                    </VStack>
+                                )}
+                        </VStack>
 
                     </div>
                 </div>

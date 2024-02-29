@@ -29,6 +29,7 @@ export const verifyTicket = async (ticket) => {
 		},
 	});
   if (res.status !== 200) {
+    console.log('not valid')
     return false
   }
 	const data = await res.json();
