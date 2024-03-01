@@ -1,16 +1,11 @@
-// import { AuthProvider } from "@/auth/AuthProvider";
 import { ColorModeScript } from "@chakra-ui/react";
 import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
-// import Head from "next/head";
-// import Footer from "./components/footer/Footer";
-// import Navbar from "./components/navbar/Navbar";
 import { lato } from "./fonts";
 import "./globals.css";
 import { Providers } from "./providers";
 import theme from "./theme";
 
-// export const runtime = 'edge';
 
 export const metadata = {
 	title: "Rainbow LGBT SHOW",
@@ -47,15 +42,9 @@ export default async function RootLayout(props) {
 			<body className={lato.className}>
 				<ColorModeScript initialColorMode={theme.config.initialColorMode} />
 				<Providers>
-					{/* <AuthProvider> */}
-						{/* <Navbar /> */}
 						<main style={{ minHeight: '100vh' }}>
 							{props.children}
-							{props.previewModal}
-							{/* {props.authModal} */}
 						</main>
-						{/* <Footer /> */}
-					{/* </AuthProvider> */}
 				</Providers>
 				<SpeedInsights />
 				<Analytics />

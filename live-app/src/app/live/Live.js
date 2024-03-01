@@ -54,7 +54,7 @@ export default function Live({token, id}) {
 			maxW={{ base: "100%" }}
 			pt={"20px"}
 			px={"20px"}
-			height={"calc(100vh - 132px)"}
+			height={"auto"}
 		>
 			<VStack width={{ base: "100%" }} gap={10} h={"100%"}>
 			<HStack justifyContent={"space-between"} width={"100%"} maxW={"1200px"}>
@@ -65,7 +65,7 @@ export default function Live({token, id}) {
 				<CurrentLive token={token} id={id} isLiveEnded={isLiveEnded}/>
 			</VStack>
 		</Container>
-		<Box  bottom={0} background={"white"} minHeight={"132px"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>
+		<Box background={"white"} minHeight={"132px"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>
          <Box my={4} maxWidth={"1200px"} className="grid max-sm:gap-5 sm:gap-10 justify-center max-sm:grid-cols-6 sm:grid-cols-6 lg:grid-cols-8 max-sm:mt-4">
              <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}} src={'/assets/C1.png'} />
              <Image height={{base:"30px", sm:"50px", md:"100px"}} width={{base:"30px", sm:"50px",md:"100px"}}src={'/assets/C2.png'} />
