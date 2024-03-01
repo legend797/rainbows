@@ -17,12 +17,12 @@ import {
 } from "@chakra-ui/react";
 
 import { useRef, useState, useEffect, useTransition, useMemo } from "react";
-
-const CurrentLive = ({token, id }) => {
+import StreamVideoPlayer from "../components/streamVideoPlayer/StreamVideoPlayer";
+const CurrentLive = ({ token, id, isLiveEnded }) => {
 	const [isClient, setIsClient] = useState(false);
 	useEffect(() => {
 		setIsClient(true)
-	},[])
+	}, [])
 	return isClient && (
 		<>
 			<VStack w={"100%"} h={{ base: "auto", md: "auto" }}>
@@ -33,9 +33,12 @@ const CurrentLive = ({token, id }) => {
 					width: "100%",
 					height: "100%",
 				}}>
-					
+					{isLiveEnded ? (<StreamVideoPlayer />) : (
+						<VideoPlayer token={token} id={id} />
+					)}
+
 					{/* <LiveVideoPlayer /> */}
-					<VideoPlayer token={token} id={id} />
+
 				</VStack>
 			</VStack>
 			{/* <ShareModal isOpen={isShareModalOpen} onClose={onShareModalClose} title={data.name} /> */}

@@ -9,6 +9,7 @@ export default function VideoPlayer({token, id}) {
     metadataViewerUserId=""
     primaryColor="#FFFFFF"
     secondaryColor="#000000"
+    maxResolution='1080p'
     tokens={{
         playback: token,
         thumbnail: token,

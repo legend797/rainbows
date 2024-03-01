@@ -46,7 +46,7 @@ export default function Live({token, id}) {
 			router.back()
 		}
 	}, [isOpen])
-
+	const [isLiveEnded, setIsLiveEnded] = useState(false);
 
 	return isClient && (
 		<>
@@ -62,7 +62,7 @@ export default function Live({token, id}) {
                     <Button size={{base:"sm", md:"lg"}} background={"#fff"} color={"#000"} onClick={() => {router.push('/')}} leftIcon={<IconArrowLeft />}>Back</Button>
                     <Image src="/assets/Rectangle.svg" w={{ base: "130px", md: "200px" }} />
                 </HStack>
-				<CurrentLive token={token} id={id}/>
+				<CurrentLive token={token} id={id} isLiveEnded={isLiveEnded}/>
 			</VStack>
 		</Container>
 		<Box  bottom={0} background={"white"} minHeight={"132px"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>
