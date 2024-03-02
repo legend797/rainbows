@@ -104,8 +104,6 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                 </div>
                 <div className=" w-full h-auto flex flex-col items-center justify-center ">
                     <div className="">
-                        {/* <Image src={logo} className="md:hidden max-sm:w-[200px] sm:w-[300px] md:w-[400px] absolute max-sm:top-0" />
-          <Image src={logo} className="absolute lg:top-[100px] md:top-[0px] max-md:hidden w-[600px] h-auto " /> */}
                         <Image src={logo} className="lg:mt-[150px] md:mt-[100px] sm:mt-[80px] max-sm:mt-[30px] lg:w-[500px]  max-sm:w-[150px] sm:w-[250px] md:w-[400px] mb-[50px]" />
                     </div>
 
