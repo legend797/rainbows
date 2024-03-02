@@ -19,7 +19,7 @@ const CurrentLive = ({ token, id, isLiveEnded, isError, isStreamStarted, StreamS
 
 	const videoEnded = async () => {
 		const storedValue = Number(localStorage.getItem('w_t') ? localStorage.getItem('w_t') : 0);
-		if(storedValue >= 2) {
+		if(storedValue >= 1) {
 			localStorage.removeItem('w_t')
 			await removeCookie();
 			window.location.reload();
@@ -54,7 +54,7 @@ const CurrentLive = ({ token, id, isLiveEnded, isError, isStreamStarted, StreamS
 		}, 1000);
 
 		return () => clearInterval(interval); // Clean up interval on unmount or when modal is closed
-	}, [StreamStartTime]);
+	}, [StreamStartTime, isLiveEnded]);
 
 	return isClient && (
 		<>
