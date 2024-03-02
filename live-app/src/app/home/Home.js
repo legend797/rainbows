@@ -45,7 +45,7 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
     const currentTime = new Date();
     const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
     // const [isTicketAccept, setIsTicketAccept] = useState(true)
-    // const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
+
     const [isTicketAccept, setIsTicketAccept] = useState(currentTime >= TicketAcceptTime)
     const [isVerified, setIsVerified] = useState(isTicketVerified);
     const [ticketCode, setTicketCode] = useState("");
