@@ -8,7 +8,7 @@ import theme from "./theme";
 
 
 export const metadata = {
-	title: "မုန်တိုင်းကြားက သတ်တံများ",
+	title: "မုန်တိုင်းကြားက သက်တံများ",
 	description: "RIS RAINBOW",
 	aurthor: "RIS RAINBOW"
 };
