@@ -39,7 +39,6 @@ export default function Live({ token, id, removeCookie }) {
 		setStreamStartTime(new Date('2024-03-02' + 'T' + streamTime + '+06:30'));
 		setIsStreamStarted((new Date('2024-03-02' + 'T' + streamTime + '+06:30') <= currentTime))
 	}, [streamTime])
-	console.log(isStreamStarted)
 
 	useEffect(() => {
 		const dataRef = ref(database, 'err');
@@ -49,6 +48,7 @@ export default function Live({ token, id, removeCookie }) {
 			setIsError(data?.error ? data.error : "")
 			setIsLiveEnded(data?.live ? data.live : false);
 			setIsFetched(true);
+			console.log(data)
 		});
 
 		return () => {
