@@ -44,9 +44,8 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
     const liveStartTime = new Date('2024-03-02' + 'T' + '17:30' + '+06:30');
     const currentTime = new Date();
     const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
-    const [isTicketAccept, setIsTicketAccept] = useState(true)
-    // const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
-    // const [isTicketAccept, setIsTicketAccept] = useState(currentTime >= TicketAcceptTime)
+    // const [isTicketAccept, setIsTicketAccept] = useState(true)
+    const [isTicketAccept, setIsTicketAccept] = useState(currentTime >= TicketAcceptTime)
     const [isVerified, setIsVerified] = useState(isTicketVerified);
     const [ticketCode, setTicketCode] = useState("");
     const [ticketRes, setTicketRes] = useState(true)
@@ -122,7 +121,7 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
 
                         {/* Ticket Code Field */}
                         <VStack className="z-10 max-md:mb-[50px] md:mb-[100px]">
-                            {isVerified ? true ? ( //isLiveStarted
+                            {isVerified ? isLiveStarted ? ( //isLiveStarted
                                 <Button sx={{ background: "linear-gradient(to right,#E70000, #FF8C00,#FFEF00, #00811F, #0044FF, #760089)" }} _hover={{ transform: "scale(1.1)" }} onClick={() => router.push('/live')}>
                                     <Text fontWeight={800}> Go to Live Streaming</Text>
                                 </Button>) : (
@@ -155,6 +154,13 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                                                 <SubmitBtn />
                                             </Box>
                                         </form>
+                                        {
+                                            !isTicketAccept && (
+                                                <Text fontSize={14} color={"purple"}>
+                                                Live စတင်ရန် မိနစ် (၃၀) အလိုတွင် လက်မှတ်များစတင်ဖြည့်သွင်းနိုင်ပါမည်။
+                                            </Text>
+                                            )
+                                        }
                                         {
                                             !ticketRes && (
                                                 <Text fontSize={14} color={"tomato"}>

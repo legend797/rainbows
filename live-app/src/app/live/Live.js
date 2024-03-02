@@ -20,12 +20,8 @@ import { database } from "@/firebase/firebase";
 import { onValue, ref} from 'firebase/database';
 
 export default function Live({ token, id, removeCookie }) {
-	const [isMobile] = useMediaQuery("(max-width: 480px)");
-	const [isTablet] = useMediaQuery("(max-width: 48em)");
-	const [initPlayer, setInitPlayer] = useState(false);
 	const [isClient, setIsClient] = useState(false)
 	const currentTime = new Date();
-	const [realtimeData, setRealtimeData] = useState(null)
 	const [isLiveEnded, setIsLiveEnded] = useState(false);
 	const [isError, setIsError] = useState("")
 	const [streamTime, setStreamTime] = useState("00:00")
