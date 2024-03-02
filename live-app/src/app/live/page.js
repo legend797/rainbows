@@ -11,9 +11,27 @@ const getCookie = async () => {
 	} 
 	return {token:null, id:null}
   }
+
+  export async function removeCookie() {
+	const threeDay = 24 * 60 * 60 * 1000 * 3
+	cookies().set({
+	  name: 'token',
+	  value: '',
+	  expires: Date.now() - threeDay,
+	  httpOnly: true,
+	  path: '/',
+	})
+	cookies().set({
+	  name: 'id',
+	  value: '',
+	  expires: Date.now() - threeDay,
+	  httpOnly: true,
+	  path: '/',
+	})
+  }
  
 export default async function LivePage() {
 	const {token, id} = await getCookie();
 
-	return <Live token={token} id={id}/>;
+	return <Live token={token} id={id} removeCookie={removeCookie} />;
 }

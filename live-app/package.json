@@ -23,6 +23,7 @@
 		"@vercel/speed-insights": "^1.0.1",
 		"aos": "^2.3.4",
 		"babel-plugin-inline-react-svg": "^2.0.2",
+		"firebase": "^10.8.1",
 		"framer-motion": "^10.16.16",
 		"next": "14.0.4",
 		"next-share": "^0.27.0",

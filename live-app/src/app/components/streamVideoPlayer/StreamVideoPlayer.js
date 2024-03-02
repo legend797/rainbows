@@ -62,7 +62,7 @@ const formatTime = (seconds) => {
 	return timeString;
 };
 
-const StreamVideoPlayer = (props) => {
+const StreamVideoPlayer = ({videoEnded}) => {
 	const playerContainerRef = useRef(null);
 	const intervalRef = useRef(null);
 	const videoRef = useRef();
@@ -131,10 +131,7 @@ const StreamVideoPlayer = (props) => {
 		responsive: true,
 		fluid: true,
 		liveTracker: true,
-		// poster: poster,
-		// userActions: {
-		// 	click: playClickVideo
-		// },
+		poster: "https://elements-video-cover-images-0.imgix.net/files/d191219e-0441-451d-85b8-c14e1ddf92de/inline_image_preview.jpg?auto=compress%2Cformat&h=394&w=700&fit=min&s=34b53909d650ea4a76166c0b7c762fb6",
 		sources: [
 			{
 				src: `https://demo.unified-streaming.com/k8s/features/stable/video/tears-of-steel/tears-of-steel.ism/.m3u8`,
@@ -158,7 +155,7 @@ const StreamVideoPlayer = (props) => {
 			videojs.log("player will dispose");
 		});
 
-		// player.on("ended", () => {});
+		player.on("ended", () => {videoEnded()});
 	}, []); // Add necessary dependencies in the array
 
 
@@ -262,12 +259,6 @@ const StreamVideoPlayer = (props) => {
 		const player = playerRef.current;
 		if (player) {
 			player.currentTime((value / 100) * duration);
-
-			// if (sliderValue > value) {
-			// 	if ((((sliderValue - value) / 100) * duration) >= 540) {
-			// 		setReloadVideo(true)
-			// 	}
-			// }
 			setSliderValue(value);
 
 		}

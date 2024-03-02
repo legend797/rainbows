@@ -4,22 +4,23 @@ import { cookies } from 'next/headers'
  
 export async function create (data) {
 
-  const oneDay = 24 * 60 * 60 * 1000
+  const threeDay = 24 * 60 * 60 * 1000 * 3
   cookies().set({
     name: 'token',
     value: data.JWT,
-    expires: Date.now() + oneDay,
+    expires: Date.now() + threeDay,
     httpOnly: true,
     path: '/',
   })
   cookies().set({
     name: 'id',
     value: data.playbackId,
-    expires: Date.now() + oneDay,
+    expires: Date.now() + threeDay,
     httpOnly: true,
     path: '/',
   })
 }
+
 
 export const verifyTicket = async (ticket) => {
 
