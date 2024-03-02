@@ -108,7 +108,6 @@ const CurrentLive = ({ token, id, isLiveEnded, isError, isStreamStarted, StreamS
 									<>
 										<Text fontSize={{ base: "18px", md: "24px" }} zIndex={16}>မုန်တိုင်းကြားကသက်တံများ</Text>
 										<Text fontSize={{ base: "12px", md: "16px" }} zIndex={16} sx={{ overflowWrap: 'break-word', wordBreak: "break-all" }} maxWidth={"80%"} textAlign={"center"}>{isError}</Text>
-										<Text fontSize={{ base: "14px", md: "18px" }} zIndex={16}>အဆင်မပြေမှုများအတွက်တောင်းပန်အပ်ပါသည်။</Text>
 									</>
 								</VStack>
 							</Box>
