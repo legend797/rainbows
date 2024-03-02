@@ -37,7 +37,6 @@ const CurrentLive = ({ token, id, isLiveEnded, isError, isStreamStarted, StreamS
 			const timeDiff = startDate - currentTime;
 
 			if (timeDiff <= 0) {
-				// If start time has passed, close the modal or do any other desired action
 				setIsStreamStarted(true)
 				clearInterval(interval);
 			} else {
