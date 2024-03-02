@@ -8,8 +8,9 @@ import theme from "./theme";
 
 
 export const metadata = {
-	title: "Rainbow LGBT SHOW",
-	description: "LGBT SHOW",
+	title: "မုန်တိုင်းကြားက သတ်တံများ",
+	description: "RIS RAINBOW",
+	aurthor: "RIS RAINBOW"
 };
 
 export default async function RootLayout(props) {
