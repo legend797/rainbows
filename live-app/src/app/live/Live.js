@@ -104,7 +104,7 @@ export default function Live({ token, id, removeCookie }) {
 					{isFetched && (<CurrentLive removeCookie={removeCookie} token={token} id={id} isError={isError} isStreamStarted={isStreamStarted} setIsStreamStarted={setIsStreamStarted} StreamStartTime={StreamStartTime} isLiveEnded={isLiveEnded} />)}
 
 				</VStack>
-				<Box display={{base:"flex",md:"none"}} flexWrap={"wrap"} mb={10} justifyContent={"space-around"} gap={5}>
+				<Box display={{base:"flex",md:"none"}} flexWrap={"wrap"} my={10} justifyContent={"space-around"} gap={5}>
 				<Image src="/assets/nugpay.svg" width={"138px"} height={"172px"} objectFit={"cover"} />
 				<Image src="/assets/sdbank.svg" width={"138px"} height={"172px"} objectFit={"cover"} />
 			</Box>
