@@ -22,7 +22,6 @@ import { onValue, ref} from 'firebase/database';
 export default function Live({ token, id, removeCookie }) {
 	const [isClient, setIsClient] = useState(false)
 	const currentTime = new Date();
-	const [realtimeData, setRealtimeData] = useState(null)
 	const [isLiveEnded, setIsLiveEnded] = useState(false);
 	const [isError, setIsError] = useState("")
 	const [streamTime, setStreamTime] = useState("00:00")
@@ -45,10 +44,11 @@ export default function Live({ token, id, removeCookie }) {
 			setIsError(data?.error ? data.error : "")
 			setIsLiveEnded(data?.live ? data.live : false);
 			setIsFetched(true);
+			console.log(data)
 		});
 
 		return () => {
-			unsubscribe(); // unsubscribe when the component is unmounted
+			unsubscribe(); 
 		};
 	}, []);
 
@@ -81,7 +81,7 @@ export default function Live({ token, id, removeCookie }) {
 
 				</VStack>
 			</Container>
-			<Box background={"white"} minHeight={"132px"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>
+			<VStack background={"none"} minHeight={"132px"} width={"100%"} display={"flex"} sx={{ justifyContent: "center", alignItems: "center" }}>
 				<Box my={4} maxWidth={"1200px"} className="grid max-sm:gap-5 sm:gap-10 justify-center max-sm:grid-cols-6 sm:grid-cols-6 lg:grid-cols-8 max-sm:mt-4">
 					<Image height={{ base: "30px", sm: "50px", md: "100px" }} width={{ base: "30px", sm: "50px", md: "100px" }} src={'/assets/C1.png'} />
 					<Image height={{ base: "30px", sm: "50px", md: "100px" }} width={{ base: "30px", sm: "50px", md: "100px" }} src={'/assets/C2.png'} />
@@ -92,7 +92,7 @@ export default function Live({ token, id, removeCookie }) {
 					<Image height={{ base: "30px", sm: "50px", md: "100px" }} width={{ base: "30px", sm: "50px", md: "100px" }} src={'/assets/C7.jpg'} />
 					<Image height={{ base: "30px", sm: "50px", md: "100px" }} width={{ base: "30px", sm: "50px", md: "100px" }} src={'/assets/C8.png'} />
 				</Box>
-			</Box>
+			</VStack>
 		</>
 	);
 }

@@ -45,7 +45,6 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
     const currentTime = new Date();
     const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
     // const [isTicketAccept, setIsTicketAccept] = useState(true)
-
     const [isTicketAccept, setIsTicketAccept] = useState(currentTime >= TicketAcceptTime)
     const [isVerified, setIsVerified] = useState(isTicketVerified);
     const [ticketCode, setTicketCode] = useState("");
@@ -104,8 +103,6 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                 </div>
                 <div className=" w-full h-auto flex flex-col items-center justify-center ">
                     <div className="">
-                        {/* <Image src={logo} className="md:hidden max-sm:w-[200px] sm:w-[300px] md:w-[400px] absolute max-sm:top-0" />
-          <Image src={logo} className="absolute lg:top-[100px] md:top-[0px] max-md:hidden w-[600px] h-auto " /> */}
                         <Image src={logo} className="lg:mt-[150px] md:mt-[100px] sm:mt-[80px] max-sm:mt-[30px] lg:w-[500px]  max-sm:w-[150px] sm:w-[250px] md:w-[400px] mb-[50px]" />
                     </div>
 
@@ -157,6 +154,13 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                                                 <SubmitBtn />
                                             </Box>
                                         </form>
+                                        {
+                                            !isTicketAccept && (
+                                                <Text fontSize={14} color={"purple"}>
+                                                Live စတင်ရန် မိနစ် (၃၀) အလိုတွင် လက်မှတ်များစတင်ဖြည့်သွင်းနိုင်ပါမည်။
+                                            </Text>
+                                            )
+                                        }
                                         {
                                             !ticketRes && (
                                                 <Text fontSize={14} color={"tomato"}>
