@@ -3,12 +3,8 @@ import {
 	Box,
 	Container,
 	HStack,
-	Stack,
 	VStack,
-	useMediaQuery,
-	Text,
 	useDisclosure,
-	IconButton,
 	Button,
 	Image
 } from "@chakra-ui/react";
@@ -18,10 +14,6 @@ import { IconArrowLeft } from "@tabler/icons-react";
 import CurrentLive from "./CurrentLive";
 import { database } from "@/firebase/firebase";
 import { onValue, ref } from 'firebase/database';
-import { Swiper, SwiperSlide } from "swiper/react";
-import 'swiper/css'; // Core Swiper
-import 'swiper/css/autoplay';
-import { Autoplay } from 'swiper/modules';
 
 export default function Live({ token, id, removeCookie }) {
 	const [isClient, setIsClient] = useState(false)
@@ -29,15 +21,15 @@ export default function Live({ token, id, removeCookie }) {
 	const [isLiveEnded, setIsLiveEnded] = useState(false);
 	const [isError, setIsError] = useState("")
 	const [streamTime, setStreamTime] = useState("00:00")
-	const [StreamStartTime, setStreamStartTime] = useState(new Date('2024-03-02' + 'T' + streamTime + '+06:30'));
+	const [StreamStartTime, setStreamStartTime] = useState(new Date('2024-03-03' + 'T' + streamTime + '+06:30'));
 	const [isStreamStarted, setIsStreamStarted] = useState(currentTime >= StreamStartTime)
 	const [isFetched, setIsFetched] = useState(false);
 	const { isOpen, onOpen, onClose } = useDisclosure();
 	const router = useRouter();
 
 	useEffect(() => {
-		setStreamStartTime(new Date('2024-03-02' + 'T' + streamTime + '+06:30'));
-		setIsStreamStarted((new Date('2024-03-02' + 'T' + streamTime + '+06:30') <= currentTime))
+		setStreamStartTime(new Date('2024-03-03' + 'T' + streamTime + '+06:30'));
+		setIsStreamStarted((new Date('2024-03-03' + 'T' + streamTime + '+06:30') <= currentTime))
 	}, [streamTime])
 
 	useEffect(() => {
