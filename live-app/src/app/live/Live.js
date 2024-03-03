@@ -36,7 +36,7 @@ export default function Live({ token, id, removeCookie }) {
 		const dataRef = ref(database, 'err');
 		const unsubscribe = onValue(dataRef, async (snapshot) => {
 			const data = await snapshot.val();
-			setStreamTime(data?.countdown ? data.countdown : "24:00")
+			setStreamTime(data?.countdown ? data.countdown : "00:00")
 			setIsError(data?.error ? data.error : "")
 			setIsLiveEnded(data?.live ? data.live : false);
 			setIsFetched(true);
