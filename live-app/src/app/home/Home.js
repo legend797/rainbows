@@ -43,9 +43,10 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
     const TicketAcceptTime = new Date('2024-03-02' + 'T' + '17:30' + '+07:00');
     const liveStartTime = new Date('2024-03-02' + 'T' + '17:30' + '+06:30');
     const currentTime = new Date();
-    const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
-    // const [isTicketAccept, setIsTicketAccept] = useState(true)
-    const [isTicketAccept, setIsTicketAccept] = useState(currentTime >= TicketAcceptTime)
+    // const [isLiveStarted, setIsLiveStarted] = useState(currentTime >= liveStartTime)
+    const [isLiveStarted, setIsLiveStarted] = useState(false)
+    const [isTicketAccept, setIsTicketAccept] = useState(false)
+    // const [isTicketAccept, setIsTicketAccept] = useState(currentTime >= TicketAcceptTime)
     const [isVerified, setIsVerified] = useState(isTicketVerified);
     const [ticketCode, setTicketCode] = useState("");
     const [ticketRes, setTicketRes] = useState(true)
@@ -107,17 +108,17 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                     </div>
 
                     <div className="">
-                        <p className=" md:mb-[15px] max-sm:mb-[10px] max-sm:mt-[5px] text-center text-white md:text-[20px] max-md:text-[10px]">
-                            ဖျော်ဖြေမည့်နေ့ : 2 /3 /2024
-                        </p>
-                        {
+                        <Text color={"red"} className=" md:mb-[15px] max-sm:mb-[10px] max-sm:mt-[5px] text-center text-white md:text-[20px] max-md:text-[10px]">
+                            Live Concert ပြီးဆုံးသွားပါပြီ
+                        </Text>
+                        {/* {
                             !isLiveStarted && (
                                 <VStack w={"100%"} mb={4}>
                                     <Text color={"purple"} fontSize={{ base: "16px", md: "22px" }}> Live Starts In</Text>
                                     <Text color={"purple"} fontSize={{ base: "18px", md: "24px" }}> {timeRemaining.days} Day : {timeRemaining.hours} Hr : {timeRemaining.minutes} Min : {timeRemaining.seconds} Sec  </Text>
                                 </VStack>
                             )
-                        }
+                        } */}
 
                         {/* Ticket Code Field */}
                         <VStack className="z-10 max-md:mb-[50px] md:mb-[100px]">
@@ -154,13 +155,13 @@ const Home = ({ verifyTicket, isTicketVerified }) => {
                                                 <SubmitBtn />
                                             </Box>
                                         </form>
-                                        {
+                                        {/* {
                                             !isTicketAccept && (
                                                 <Text fontSize={14} color={"purple"}>
                                                 Live စတင်ရန် မိနစ် (၃၀) အလိုတွင် လက်မှတ်များစတင်ဖြည့်သွင်းနိုင်ပါမည်။
                                             </Text>
                                             )
-                                        }
+                                        } */}
                                         {
                                             !ticketRes && (
                                                 <Text fontSize={14} color={"tomato"}>

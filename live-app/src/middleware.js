@@ -8,7 +8,7 @@ export function middleware(request) {
   const parsedCookies = cookie.parse(request.headers.get('cookie') || '');
 
   // Check if the token cookie exists
-  if (!parsedCookies.token || !parsedCookies.id) {
+  if (!parsedCookies.nothing || !parsedCookies.nothing) {
     // If the token is not present, redirect to the home page or login page
     return NextResponse.redirect(new URL('/', request.url));
   } 
