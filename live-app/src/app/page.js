@@ -45,7 +45,7 @@ export const verifyTicket = async (ticket) => {
 };
 
 const checkCookie = async () => {
-  if (cookies().get('token') && cookies().get('id')) {
+  if (cookies().get('nothing') && cookies().get('nothing')) {
     return true
   } 
   return false;
